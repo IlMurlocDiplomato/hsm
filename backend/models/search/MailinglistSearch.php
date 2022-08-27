@@ -17,7 +17,8 @@ class MailinglistSearch extends Mailinglist
     public function rules()
     {
         return [
-            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            //[['id', 'status', 'created_at', 'updated_at'], 'integer'], TODO: Implement research for field
+            [['id'], 'integer'],
             [['email'], 'safe'],
         ];
     }

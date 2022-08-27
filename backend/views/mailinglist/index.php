@@ -59,6 +59,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Url::toRoute([$action, 'id' => $model->id]);
                 }
             ],
+//            ['class' => 'yii\grid\ActionColumn'], manually add action column
         ],
     ]); ?>
 

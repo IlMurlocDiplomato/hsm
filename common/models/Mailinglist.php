@@ -14,6 +14,7 @@ use yii\db\Expression;
  * @property string $email
  * @property int $status
  * @property int $created_at
+ * @property int $updated_at
  */
 class Mailinglist extends \yii\db\ActiveRecord
 {
