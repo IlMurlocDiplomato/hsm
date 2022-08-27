@@ -3,6 +3,9 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\BlameableBehavior;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "{{%mailinglist}}".
@@ -22,15 +25,24 @@ class Mailinglist extends \yii\db\ActiveRecord
         return '{{%mailinglist}}';
     }
 
+
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::class,
+        ];
+    }
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['email', 'status', 'created_at'], 'required'],
+            [['email', 'status'], 'required'],
             [['status', 'created_at'], 'integer'],
             [['email'], 'string', 'max' => 120],
+
         ];
     }
 
@@ -42,8 +54,9 @@ class Mailinglist extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'email' => 'Email',
-            'status' => 'Status',
+            'status' => 'Active',
             'created_at' => 'Created At',
+            'Updated at' => 'Updated At',
         ];
     }
 

@@ -31,8 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'email:email',
-            'status',
-            'created_at',
+            [
+                'attribute' => 'status',
+                'format' => 'html',
+                'value' => fn() => Html::tag('span', $model->status ? 'Active' : 'Draft', [
+                    'class' => $model->status ? 'badge badge-success' : 'badge badge-danger'
+                ]),
+            ],
+            'created_at:datetime',
+            'updated_at:datetime',
         ],
     ]) ?>
 
