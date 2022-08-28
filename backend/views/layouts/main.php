@@ -55,9 +55,9 @@ AppAsset::register($this);
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>TODO</span></a>
+                <a class="nav-link" href="<?php echo \yii\helpers\Url::to(['article/index']); ?>">
+                    <i class="fas fa-fw fa-newspaper"></i>
+                    <span>Articles</span></a>
             </li>
 
             <!-- Divider -->
